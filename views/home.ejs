@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>juc schedul</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<style>
+    div.dataTables_wrapper {
+        margin: 0 auto;
+    }
+    div.container {
+	min-width: 980px;
+}
+</style>
+</head>
+
+<body>
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Course Name</th>
+                <th>S. Seq</th>
+                <th>Activity</th>
+                <th>SUN</th>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>Room No</th>
+                <th>STAFF</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% schedulData.forEach(element=> { %>
+                <tr>
+                    <td>
+                        <%= element.Course %>
+                    </td>
+                    <td>
+                        <%= element.Course_Name %>
+                    </td>
+                    <td>
+                        <%= element.Seq %>
+                    </td>
+                    <td>
+                        <%= element.Activity %>
+                    </td>
+                    <td>
+                        <%= element.SUN %>
+                    </td>
+                    <td>
+                        <%= element.MON %>
+                    </td>
+                    <td>
+                        <%= element.TUE %>
+                    </td>
+                    <td>
+                        <%= element.WED %>
+                    </td>
+                    <td>
+                        <%= element.THU %>
+                    </td>
+                    <td>
+                        <%= element.Room_No %>
+                    </td>
+                    <td>
+                        <%= element.STAFF %>
+                    </td>
+                </tr>
+                <% }) %>
+
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table_id').DataTable({
+                "scrollX": true
+            });
+        })
+    </script>
+</body>
+
+</html>
